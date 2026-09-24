@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { portfolio, projectCategories, type Project } from '../data/portfolio';
+export function getStaticPaths() {
+  return portfolio.projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+interface Props { project: Project; }
+const { project } = Astro.props;
+const galleryPhotos = project.photos.filter((photo) => photo.src !== project.cover);
+const related = project.related.map((slug) => portfolio.projects.find((item) => item.slug === slug)).filter((item): item is Project => Boolean(item));
+const categories = projectCategories(project);
+const relatedGroups = categories.map((category) => ({
+  category,
+  projects: related.filter((item) => item.slug !== project.slug && projectCategories(item).includes(category)),
+})).filter((group) => group.projects.length > 0);
+---
+<BaseLayout title={`${project.title} — Sohaib's Portfolio`} description={project.paragraphs[0]} image={project.cover || undefined}>
+  <section class="project-hero container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/#projects-section">Projects</a><span aria-hidden="true">/</span><span aria-current="page">{project.title}</span></nav>
+    <p class="eyebrow">{categories.join(' / ')} / PROJECT</p>
+    <h1>{project.title}</h1>
+    <div class="project-tags">{project.technologies.map((tech) => <span>{tech}</span>)}</div>
+    {project.cover && <div class="project-banner"><img src={project.cover} alt={`${project.title} project overview`} width="1200" height="650" fetchpriority="high" /></div>}
+  </section>
+  <div class="container project-body">
+    <article class="project-story">
+      <section aria-labelledby="overview-title"><p class="eyebrow">THE PROJECT</p><h2 id="overview-title">Overview</h2><div class="project-prose">{project.paragraphs.map((text) => <p>{text}</p>)}</div>{project.links.length > 0 && <div class="project-actions">{project.links.map((link) => <a class="button button-dark" href={link.href} target="_blank" rel="noopener noreferrer">{link.label}<Icon name="external" /></a>)}</div>}</section>
+      {(project.embeds.length > 0 || project.videos.length > 0) && <section class="media-section" aria-labelledby="video-title"><h2 id="video-title">Video Demo</h2>{project.embeds.map((src) => <iframe class="video-embed" src={src} title={`${project.title} video demo`} loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />)}{project.videos.map((src) => <video controls preload="none" poster={project.cover || undefined} aria-label={`${project.title} video demo`}><source src={src} type="video/mp4" />Your browser does not support the video tag. <a href={src}>Download video</a></video>)}</section>}
+      {galleryPhotos.length > 0 && <section class="media-section" aria-labelledby="photos-title"><h2 id="photos-title">Photos</h2><div class="photo-grid">{galleryPhotos.map((photo) => <a class="photo-link" href={photo.src} target="_blank" rel="noopener noreferrer" aria-label={`Open ${photo.alt} in a new tab`}><img src={photo.src} alt={photo.alt} width="800" height="600" loading="lazy" decoding="async" /><span>View image <Icon name="external" size={16} /></span></a>)}</div></section>}
+    </article>
+    <aside class="project-sidebar"><div><p class="eyebrow">TOOLKIT</p><h2>Technologies Used</h2><ul>{project.technologies.map((tech) => <li>{tech}</li>)}</ul><a class="text-link" href="/#projects-section">All projects <Icon /></a></div></aside>
+  </div>
+  {relatedGroups.map((group) => <section class="section related-section" aria-label={`Other ${group.category} Projects`}><div class="container"><div class="section-heading"><div><p class="eyebrow">KEEP EXPLORING</p><h2>Other {group.category} Projects</h2></div></div><div class="project-grid">{group.projects.map((item, index) => <ProjectCard project={item} index={index} />)}</div></div></section>)}
+</BaseLayout>

@@ -1,0 +1,579 @@
+{
+  "name": "Muhammad Sohaib Ashraf",
+  "shortName": "Sohaib",
+  "roles": [
+    "Software Engineer — Robotics & Autonomous Systems"
+  ],
+  "details": [
+    {
+      "label": "Name",
+      "value": "Muhammad Sohaib Ashraf"
+    },
+    {
+      "label": "Location",
+      "value": "Perth, Western Australia"
+    },
+    {
+      "label": "Email",
+      "value": "suhaib.sabi@hotmail.com"
+    },
+    {
+      "label": "Phone",
+      "value": "0466606073"
+    }
+  ],
+  "portrait": "/images/Pic.jpg",
+  "cv": "/CVASHRAF.pdf",
+  "linkedin": "https://www.linkedin.com/in/muhammad-sohaib",
+  "phoneDisplay": "0466606073",
+  "experience": [
+    {
+      "date": "Jul 2024 - Present",
+      "title": "Robotics | Design Engineer (Software)",
+      "organization": "Nexxis - Perth, Australia",
+      "paragraphs": [
+        "Develop software for industrial robotic systems, working across operator-facing applications, robotics integration, and software-hardware interfaces.",
+        "Contribute to Nexxis robotics control software and ROS 2-based integration within the wider Nexxis software stack.",
+        "Work with robotics, localisation, sensing, and control technologies used in industrial inspection environments.",
+        "Support integration and reliability across software and robotic hardware, with an emphasis on maintainable engineering and practical field use."
+      ],
+      "details": []
+    },
+    {
+      "date": "Mar 2022 - Oct 2023",
+      "title": "System Engineer",
+      "organization": "Cube Discipline - Islamabad, Pakistan",
+      "paragraphs": [
+        "Worked with multidisciplinary engineering teams on robotics, automation, machine-vision, and simulation projects.",
+        "Developed and integrated software using C++, Python, PLC systems, and Unity-based simulation.",
+        "Used data analysis and visualisation to evaluate system behaviour and support engineering decisions."
+      ],
+      "details": []
+    },
+    {
+      "date": "Mar 2021 - Mar 2022",
+      "title": "Robotics Software Engineer",
+      "organization": "Epazz - Lahore, Pakistan",
+      "paragraphs": [
+        "Contributed to the design and development of robotics and IoT systems using machine vision, C++, Python, ROS, PLC programming, and simulation.",
+        "Worked across software requirements, implementation, hardware integration, and technical coordination with cross-functional engineering teams.",
+        "Developed computer-vision and machine-learning functionality and integrated software with robotic hardware and sensors."
+      ],
+      "details": []
+    },
+    {
+      "date": "Dec 2019 - Nov 2020",
+      "title": "Software Engineer (Robotics)",
+      "organization": "Oneberry Technologies - Singapore",
+      "paragraphs": [
+        "Contributed to R&D for autonomous mobile robots, focusing on computer vision, localisation, mapping, and navigation.",
+        "Developed semantic-segmentation functionality for camera-based sidewalk navigation.",
+        "Worked with ROS, Isaac SDK, C++, Python, LiDAR, depth cameras, SLAM, and local-planning components."
+      ],
+      "details": []
+    },
+    {
+      "date": "Mar 2017 - Dec 2017",
+      "title": "Web Developer",
+      "organization": "Epullon - Lahore, Pakistan",
+      "paragraphs": [
+        "Developed and deployed web-based business applications using PHP, CodeIgniter, JavaScript, jQuery, HTML, and CSS.",
+        "Worked across backend and frontend development and supported development-team coordination."
+      ],
+      "details": []
+    },
+    {
+      "date": "Jul 2015 - Sep 2015",
+      "title": "Web Developer Intern",
+      "organization": "Zepto Systems - Islamabad, Pakistan",
+      "paragraphs": [
+        "Worked as a full-stack development intern with an emphasis on backend development.",
+        "Built practical experience with PHP, CodeIgniter, JavaScript, jQuery, and collaborative software development."
+      ],
+      "details": []
+    }
+  ],
+  "education": [
+    {
+      "date": "2018-2019",
+      "title": "MSc Artificial Intelligence and Robotics",
+      "organization": "University of Hertfordshire, UK",
+      "paragraphs": [],
+      "details": [
+        "Result: Distinction | 4.5/5.0 | 93% in Thesis",
+        "Modules: • Machine learning and Neural networks • Theory and Practice of Artificial intelligence • Artificial life with robotics • Investigative Methods for Computer Science • Professional Issues"
+      ]
+    },
+    {
+      "date": "2013-2017",
+      "title": "BS Software Engineering",
+      "organization": "University of Management and Technology, Pakistan",
+      "paragraphs": [],
+      "details": [
+        "Result: 2.81/4.00",
+        "Modules: • Object-Oriented Programming • Data Base Systems • Software Engineering • Computer Vision • Mobile Application Development • Computer Graphics • Web Development • Few More"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "date": "2017",
+      "title": "Game Developer",
+      "organization": "Unity3d",
+      "paragraphs": [
+        "Credential ID: 201708UCD3065."
+      ],
+      "details": []
+    }
+  ],
+  "specialties": [
+    {
+      "name": "Robotics Software Engineering",
+      "value": 85
+    },
+    {
+      "name": "Systems Integration",
+      "value": 85
+    },
+    {
+      "name": "Autonomous Systems",
+      "value": 85
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software Engineering",
+      "value": 85
+    },
+    {
+      "name": "Robotics & Autonomous Systems",
+      "value": 85
+    },
+    {
+      "name": "ROS / ROS 2",
+      "value": 85
+    },
+    {
+      "name": "C#",
+      "value": 88
+    },
+    {
+      "name": "Unity 3D",
+      "value": 85
+    },
+    {
+      "name": "Python",
+      "value": 85
+    },
+    {
+      "name": "C / C++",
+      "value": 82
+    },
+    {
+      "name": "Linux",
+      "value": 82
+    },
+    {
+      "name": "Git / GitHub",
+      "value": 88
+    },
+    {
+      "name": "Systems Integration & Debugging",
+      "value": 88
+    },
+    {
+      "name": "Computer Vision / OpenCV",
+      "value": 80
+    },
+    {
+      "name": "SLAM / LiDAR",
+      "value": 80
+    },
+    {
+      "name": "Machine Learning / AI",
+      "value": 75
+    }
+  ],
+  "projects": [
+    {
+      "slug": "augmum",
+      "title": "Augmum",
+      "category": "Robotics",
+      "cover": "/images/AG0.jpg",
+      "paragraphs": [
+        "• Project overview: Augmum is a robotics R&D project exploring how observed human hand movements can be learned and reproduced by a robotic arm with minimal direct operator control.",
+        "• Engineering challenge: The problem required several disciplines to work together — visual perception, machine learning, motion interpretation, robotics middleware, and physical actuation — so that human movement could be converted into useful robot behaviour.",
+        "• My contribution: Worked on the machine-learning and computer-vision side of the system and supported integration with the ROS-based robotics stack using C++, Python, TensorFlow, and related AI techniques.",
+        "• Technical approach: Explored neural-network and CNN-based methods, YOLO-based vision, reinforcement-learning concepts, and ROS integration to connect perception outputs with downstream robot actions.",
+        "• Professional value: The project gave me practical experience at the intersection of AI and robotics, particularly the challenge of taking perception and learning techniques beyond experimentation and connecting them to a physical robotic system."
+      ],
+      "links": [
+        {
+          "label": "Link",
+          "href": "https://www.augmum.com/"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/AG0.jpg",
+          "alt": "Augmum — project image 1"
+        }
+      ],
+      "embeds": [],
+      "videos": [],
+      "technologies": [
+        "Artificial Intelligence",
+        "ROS",
+        "C++",
+        "Python",
+        "Neural Network/CNN",
+        "Computer Vision/Yolo",
+        "Reinforcement Learning"
+      ],
+      "related": [
+        "kenOB1",
+        "sidewalk-robot",
+        "evolutionary-flocking-shooter",
+        "fusion-fission-dynamics"
+      ]
+    },
+    {
+      "slug": "kenOB1",
+      "title": "KenOB1",
+      "category": "Robotics",
+      "cover": "/images/KO2.jpg",
+      "paragraphs": [
+        "• Project overview: Contributed to RoboGuard KenOB1, a human-sized autonomous security robot developed by Oneberry Technologies in Singapore, with a focus on improving its perception, localisation, and autonomous-navigation capability.",
+        "• Engineering challenge: The existing platform relied on 2D SICK LiDAR. Expanding the sensing stack to 3D LiDAR and depth cameras required the new hardware to work reliably with the robot’s existing ROS-based localisation, mapping, navigation, and motion-control components.",
+        "• My contribution: Upgraded the sensing configuration to include a Velodyne VLP-16 and depth cameras, and worked on integrating the new perception hardware into the autonomy stack.",
+        "• Technical approach: Worked with ROS, C/Python, RTAB-Map, HDL Graph SLAM, TEB Local Planner, Intel RealSense D435i, ZED Mini, Velodyne LiDAR, and Roboteq motor-control hardware.",
+        "• Outcome: The work broadened the robot’s environmental perception and extended the autonomy stack beyond the original 2D sensing setup, while giving me hands-on experience integrating sensors, SLAM, localisation, planning, and mobile-robot hardware as one operational system."
+      ],
+      "links": [],
+      "photos": [
+        {
+          "src": "/images/KO1.jpg",
+          "alt": "KenOB1 — project image 1"
+        },
+        {
+          "src": "/images/KO2.jpg",
+          "alt": "KenOB1 — project image 2"
+        }
+      ],
+      "embeds": [
+        "https://www.youtube.com/embed/DbwT4gVBw1A"
+      ],
+      "videos": [],
+      "technologies": [
+        "C",
+        "Python",
+        "ROS",
+        "Teb local path planner",
+        "Rtab",
+        "Hdl graph slam",
+        "Depth Camera (Realsense D435i / Zed mini)",
+        "Roboteq"
+      ],
+      "related": [
+        "augmum",
+        "sidewalk-robot",
+        "evolutionary-flocking-shooter",
+        "fusion-fission-dynamics"
+      ]
+    },
+    {
+      "slug": "sidewalk-robot",
+      "title": "Sidewalk Robot",
+      "category": "Robotics",
+      "cover": "/images/sw0.jpg",
+      "paragraphs": [
+        "• Project overview: Developed an autonomous mobile-robot prototype at Oneberry Technologies for camera-based navigation along pedestrian sidewalks.",
+        "• Engineering challenge: The robot needed to distinguish traversable sidewalk from surrounding areas using live visual input, remain aligned with the path, and react to obstacles without relying on a fully predefined route.",
+        "• My contribution: Developed the perception workflow used to identify free space and connected that perception output with the robot’s navigation and motion-control pipeline.",
+        "• Technical approach: Used semantic segmentation, OpenCV, Isaac SDK, ROS, ROS Bridge, C/C++, ZED/USB camera input, and Sabertooth motor control to support path detection, path following, and obstacle avoidance.",
+        "• Professional value: The project strengthened my understanding of end-to-end autonomous navigation by connecting computer-vision inference with middleware and physical robot movement rather than treating perception as an isolated software task."
+      ],
+      "links": [],
+      "photos": [],
+      "embeds": [],
+      "videos": [],
+      "technologies": [
+        "C",
+        "Isaac SDK",
+        "ROS",
+        "USB Camera",
+        "OpenCV",
+        "Free Space Segmentation",
+        "Ros Bridge",
+        "Sabertooth"
+      ],
+      "related": [
+        "augmum",
+        "kenOB1",
+        "evolutionary-flocking-shooter",
+        "fusion-fission-dynamics"
+      ]
+    },
+    {
+      "slug": "evolutionary-flocking-shooter",
+      "title": "Evolutionary Flocking Shooter",
+      "category": "Robotics",
+      "additionalCategories": ["Games"],
+      "cover": "/images/FS11.jpg",
+      "paragraphs": [
+        "• Project overview: Built an AI-driven simulation in Unity3D and C# for postgraduate coursework, using evolutionary computation to train enemy agents instead of defining their behaviour entirely through scripted rules.",
+        "• Engineering challenge: The agents needed to discover useful behaviour over successive generations, including locating the target, avoiding the tower’s attack zone, and improving their ability to approach and destroy the objective.",
+        "• My contribution: Designed and implemented the simulation environment, agent behaviour, fitness evaluation, and genetic-algorithm cycle used to evolve each new generation.",
+        "• Technical approach: Used a Genetic Algorithm within Unity3D to evaluate agent performance, select stronger behaviours, and progressively improve decision-making across generations.",
+        "• Outcome: By approximately the seventh generation, the agents demonstrated the intended behaviours of locating the objective, avoiding the defended region, and attacking the target. I completed the project in around 20 days and achieved a 92% module mark."
+      ],
+      "links": [],
+      "photos": [
+        {
+          "src": "/images/FS10.jpg",
+          "alt": "Evolutionary Flocking Shooter — project image 1"
+        },
+        {
+          "src": "/images/FS5.jpg",
+          "alt": "Evolutionary Flocking Shooter — project image 2"
+        }
+      ],
+      "embeds": [
+        "https://www.youtube.com/embed/A9k6WBoY548"
+      ],
+      "videos": [],
+      "technologies": [
+        "Genetic Algorithm",
+        "Unity3D Engine",
+        "C#"
+      ],
+      "related": [
+        "augmum",
+        "kenOB1",
+        "sidewalk-robot",
+        "fusion-fission-dynamics",
+        "super-nim",
+        "snake-and-cake"
+      ]
+    },
+    {
+      "slug": "fusion-fission-dynamics",
+      "title": "Fusion Fission Dynamics",
+      "category": "Robotics",
+      "cover": "/images/FFD0.jpg",
+      "paragraphs": [
+        "• Project overview: Developed artificial-life and swarm-robotics experiments using Thymio robots and NetLogo as part of postgraduate coursework in Artificial Life with Robotics.",
+        "• Engineering challenge: The objective was to create coordinated group behaviour from local sensing and simple individual rules rather than relying on centralised control.",
+        "• My contribution: Implemented behaviours for following, flocking, obstacle detection, and line avoidance, and designed multiple sensing regions that influenced how each robot reacted to nearby robots and environmental features.",
+        "• Technical approach: Divided perception into far-sight, near-sight, and perspective zones, then varied their parameters to observe how sensing range and spatial context changed individual decisions and group formation.",
+        "• Professional value: The project provided practical experience with emergent behaviour, distributed decision-making, and the relationship between local perception rules and swarm-level dynamics."
+      ],
+      "links": [],
+      "photos": [
+        {
+          "src": "/images/FFD1.jpg",
+          "alt": "Fusion Fission Dynamics — project image 1"
+        },
+        {
+          "src": "/images/FFD2.jpg",
+          "alt": "Fusion Fission Dynamics — project image 2"
+        }
+      ],
+      "embeds": [],
+      "videos": [],
+      "technologies": [
+        "Aseba Studio",
+        "Aseba Playground",
+        "Thymio Robotcs",
+        "Netlogo"
+      ],
+      "related": [
+        "augmum",
+        "kenOB1",
+        "sidewalk-robot",
+        "evolutionary-flocking-shooter"
+      ]
+    },
+    {
+      "slug": "super-nim",
+      "title": "Super Nim",
+      "category": "Games",
+      "cover": "/images/sn0.jpg",
+      "paragraphs": [
+        "• Project overview: Developed Super Nim in Python for an MSc Artificial Intelligence module, extending the traditional mathematical game of Nim with additional actions and a larger decision space.",
+        "• Engineering challenge: The custom split, merge, and Collatz-Ulam operations created more possible future states than standard Nim, requiring the AI player to evaluate alternatives efficiently.",
+        "• My contribution: Designed the game rules and implemented the complete playable application, including support for human players, computer-controlled players, and AI decision-making.",
+        "• Technical approach: Implemented a Minimax-based AI player with alpha-beta pruning to reduce unnecessary search branches while preserving the quality of move selection.",
+        "• Professional value: The project demonstrates practical application of adversarial search, state modelling, algorithmic optimisation, and AI decision-making in a complete interactive program. The project was completed in approximately 12 days."
+      ],
+      "links": [],
+      "photos": [
+        {
+          "src": "/images/sn1.jpg",
+          "alt": "Super Nim — project image 1"
+        },
+        {
+          "src": "/images/sn2.jpg",
+          "alt": "Super Nim — project image 2"
+        },
+        {
+          "src": "/images/sn3.jpg",
+          "alt": "Super Nim — project image 3"
+        }
+      ],
+      "embeds": [],
+      "videos": [],
+      "technologies": [
+        "AI Algorithm (Alpha Beta)",
+        "Python"
+      ],
+      "related": [
+        "snake-and-cake"
+      ]
+    },
+    {
+      "slug": "snake-and-cake",
+      "title": "Snake and Cake",
+      "category": "Games",
+      "cover": "/images/sc0.jpg",
+      "paragraphs": [
+        "• Project overview: Developed Snake and Cake, a desktop game in C++ and OpenGL for a university Computer Graphics project, inspired by classic Nokia-era snake games.",
+        "• My contribution: Implemented the core gameplay loop, player controls, rendering behaviour, difficulty progression, and application state management.",
+        "• Technical approach: Used object-oriented C++ to organise the game logic and OpenGL for real-time rendering and visual updates.",
+        "• Features delivered: Implemented selectable difficulty levels together with start, pause, resume, and stop behaviour to create a complete playable desktop application.",
+        "• Professional value: The project provided early hands-on experience with real-time application structure, graphics programming, user input, and object-oriented software design."
+      ],
+      "links": [],
+      "photos": [
+        {
+          "src": "/images/sc1.jpg",
+          "alt": "Snake and Cake — project image 1"
+        },
+        {
+          "src": "/images/sc2.jpg",
+          "alt": "Snake and Cake — project image 2"
+        },
+        {
+          "src": "/images/sc4.jpg",
+          "alt": "Snake and Cake — project image 3"
+        }
+      ],
+      "embeds": [],
+      "videos": [],
+      "technologies": [
+        "OpenGL",
+        "C++",
+        "OOP"
+      ],
+      "related": [
+        "super-nim"
+      ]
+    },
+    {
+      "slug": "chefu",
+      "title": "Chefu",
+      "category": "Web",
+      "cover": "/images/C0.jpg",
+      "paragraphs": [
+        "• Project overview: Developed Chefu as a web and mobile-oriented marketplace concept designed to connect customers with nearby chefs while giving chefs a platform to present and sell their services.",
+        "• Product scope: The application supported chef profiles and portfolios, customer ratings and reviews, recipe sales, and location-aware functionality for booked services.",
+        "• My contribution: Worked across the application stack, implementing server-side functionality, data-driven pages, user interactions, and workflows connecting customers with service providers.",
+        "• Technical approach: Built the application with PHP and CodeIgniter on the backend, supported by JavaScript, jQuery, AJAX, Bootstrap, HTML, and CSS for responsive and interactive client-side behaviour.",
+        "• Professional value: The project demonstrates end-to-end web-application development across business logic, user-facing workflows, asynchronous interactions, and integration between backend and frontend components."
+      ],
+      "links": [],
+      "photos": [
+        {
+          "src": "/images/C1.jpg",
+          "alt": "Chefu — project image 1"
+        },
+        {
+          "src": "/images/C2.jpg",
+          "alt": "Chefu — project image 2"
+        },
+        {
+          "src": "/images/C3.jpg",
+          "alt": "Chefu — project image 3"
+        }
+      ],
+      "embeds": [],
+      "videos": [],
+      "technologies": [
+        "Codeigniter",
+        "PHP",
+        "JQuery",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "Ajax"
+      ],
+      "related": [
+        "premier-polmarex"
+      ]
+    },
+    {
+      "slug": "premier-polmarex",
+      "title": "Premier Polmarex",
+      "category": "Web",
+      "cover": "/images/pp0.jpg",
+      "paragraphs": [
+        "• Project overview: Developed the corporate website for Premier Polmarex, a Canadian logistics company, to provide a professional public-facing presence for its products and services.",
+        "• Business requirement: The solution needed to present company and catalogue information to customers while also providing an administrative workflow for maintaining content.",
+        "• My contribution: Developed the public website and supporting administration panel, including integration with the existing eSello catalogue workflow.",
+        "• Technical approach: Implemented the solution using PHP, CodeIgniter, JavaScript, jQuery, AJAX, Bootstrap, HTML, and CSS.",
+        "• Professional value: The project demonstrates delivery of a business-oriented web solution combining customer-facing content, administrative tooling, and integration with an external catalogue system."
+      ],
+      "links": [
+        {
+          "label": "Link",
+          "href": "https://www.premierpolmarex.ca/"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/pp1.jpg",
+          "alt": "Premier Polmarex — project image 1"
+        },
+        {
+          "src": "/images/pp2.jpg",
+          "alt": "Premier Polmarex — project image 2"
+        }
+      ],
+      "embeds": [],
+      "videos": [],
+      "technologies": [
+        "Codeigniter",  
+        "PHP",
+        "HTML",
+        "CSS",
+        "AJAX",
+        "JQuery",
+        "Bootstrap"
+      ],
+      "related": [
+        "chefu"
+      ]
+    },
+    {
+      "slug": "intellisense-smart-environment",
+      "title": "IntelliSense - Smart Environment",
+      "category": "IoT",
+      "cover": "/images/intellisense-smart-environment.png",
+      "paragraphs": [
+        "Personal Project | 2024 - Present",
+        "Developing an IoT smart-environment system using Python, machine learning and computer vision to detect emotional cues and trigger context-aware environmental adjustments designed to support user comfort and wellbeing."
+      ],
+      "links": [],
+      "photos": [],
+      "embeds": [],
+      "videos": [],
+      "technologies": [
+        "Python",
+        "Machine Learning",
+        "Computer Vision",
+        "IoT"
+      ],
+      "related": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+---
+import { projectUrl, projectCategories, type Project } from '../data/portfolio';
+import Icon from './Icon.astro';
+interface Props { project: Project; index?: number; }
+const { project } = Astro.props;
+const categories = projectCategories(project);
+---
+<article class="project-card" data-categories={JSON.stringify(categories)}>
+  <a href={projectUrl(project.slug)} class="project-link">
+    <div class="project-image">
+      {project.cover ? <img src={project.cover} alt="" width="640" height="420" loading="lazy" decoding="async" /> : <div class="project-placeholder" aria-hidden="true"><Icon name="plus" size={44} /><span>{project.category}</span></div>}
+      <span class="project-open"><Icon name="external" size={22} /></span>
+    </div>
+    <div class="project-meta"><span>{categories.join(' / ')}</span><span>{project.technologies.slice(0, 2).join(' / ')}</span></div>
+    <h3>{project.title}</h3>
+  </a>
+</article>

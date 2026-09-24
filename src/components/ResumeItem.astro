@@ -1,0 +1,18 @@
+---
+import type { ResumeEntry } from '../data/portfolio';
+interface Props { entry: ResumeEntry; bulleted?: boolean; }
+const { entry, bulleted = false } = Astro.props;
+---
+<article class="resume-item">
+  <p class="entry-date">{entry.date}</p>
+  <h4>{entry.title}</h4>
+  <p class="entry-organization">{entry.organization}</p>
+  <div class="entry-description">
+    {bulleted ? <ul class="experience-points">{entry.paragraphs.map((paragraph) => <li>{paragraph}</li>)}</ul> : entry.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    {entry.details.map((detail) => {
+      const [label, ...rest] = detail.split(':');
+      const value = rest.join(':').trim();
+      return <div class="education-detail"><strong>{label}:</strong>{value.includes('•') ? <ul>{value.split('•').map((item) => item.trim()).filter(Boolean).map((item) => <li>{item}</li>)}</ul> : <span> {value}</span>}</div>;
+    })}
+  </div>
+</article>

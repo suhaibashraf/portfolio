@@ -1,0 +1,13 @@
+{
+  "photoProjects": ["sidewalk-robot"],
+  "images": ["sw1.jpg", "sw2.jpg", "sw3.jpg"],
+  "videos": ["swv.mp4"],
+  "links": [
+    "https://www.oneberry.com/#securityRobots",
+    "https://github.com/suhaibashraf/Evolutionary-Flocking-Shooter",
+    "https://github.com/suhaibashraf/fusion-fission-dynamics",
+    "https://github.com/suhaibashraf/Super-Nim",
+    "https://github.com/suhaibashraf/Snake-and-Cake",
+    "https://github.com/suhaibashraf/Cheffu"
+  ]
+}

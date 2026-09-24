@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ResumeItem from '../components/ResumeItem.astro';
+import { portfolio, categories } from '../data/portfolio';
+const email = portfolio.details.find((item) => item.label === 'Email')!.value;
+const phone = portfolio.details.find((item) => item.label === 'Phone')!.value;
+const location = portfolio.details.find((item) => ['Location', 'Address'].includes(item.label));
+const address = location?.value ?? '';
+---
+<BaseLayout>
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="hero-greeting">Hi! I am</p>
+      <h1 id="hero-title">{portfolio.shortName}</h1>
+      <div class="hero-roles">{portfolio.roles.map((role) => <p>{role}</p>)}</div>
+      <div class="hero-actions">
+        <a class="button button-dark" href="/resume.html" target="_blank" rel="noopener noreferrer" aria-label="Resume (opens in a new tab)">Resume</a>
+      </div>
+    </div>
+    <figure class="hero-visual">
+      <div class="portrait-frame"><img src={portfolio.portrait} alt={portfolio.name} width="700" height="850" fetchpriority="high" /></div>
+      <figcaption class="portrait-label"><strong>{portfolio.name}</strong><span>{address}</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="section resume-section" id="resume-section" aria-labelledby="resume-title">
+    <div class="container">
+      <div class="section-heading"><h2 id="resume-title">Resume</h2></div>
+      <div class="resume-grid">
+        <nav class="resume-nav" aria-label="Resume sections"><a href="#page-2">Experience</a><a href="#page-1">Education</a><a href="#page-3">Skills</a><a href="#page-4">Certificates</a></nav>
+        <div class="resume-content">
+          <section id="page-2" class="resume-group" aria-labelledby="experience-title"><h3 id="experience-title">Experience</h3>{portfolio.experience.map((entry) => <ResumeItem entry={entry} bulleted />)}</section>
+          <section id="page-1" class="resume-group" aria-labelledby="education-title"><h3 id="education-title">Education</h3>{portfolio.education.map((entry) => <ResumeItem entry={entry} />)}</section>
+          <section id="page-3" class="resume-group" aria-labelledby="skills-title"><h3 id="skills-title">Skills</h3><div class="specialties">{portfolio.specialties.map((skill) => <div><span>{skill.name}</span><strong>{skill.value}<small>%</small></strong></div>)}</div><div class="skills-grid">{portfolio.skills.map((skill) => <div class="skill"><div><span>{skill.name}</span><span>{skill.value}%</span></div><meter min="0" max="100" value={skill.value} aria-label={skill.name}>{skill.value}%</meter></div>)}</div></section>
+          <section id="page-4" class="resume-group" aria-labelledby="certificates-title"><h3 id="certificates-title">Certificates</h3>{portfolio.certificates.map((entry) => <ResumeItem entry={entry} />)}</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects-section" id="projects-section" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="section-heading"><h2 id="projects-title">Projects</h2></div>
+      <div class="project-toolbar"><div class="project-filters" role="group" aria-label="Filter projects" hidden>{['All', ...categories].map((category) => <button type="button" data-filter={category} aria-pressed={category === 'All'}>{category}</button>)}</div></div>
+      <div class="project-grid">{portfolio.projects.map((project, index) => <ProjectCard project={project} index={index} />)}</div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact-section" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-heading"><h2 id="contact-title">Contact Me</h2><a class="contact-arrow" href={`mailto:${email}`} aria-label={`Email ${portfolio.shortName}`}><Icon name="mail" size={52} /></a></div>
+      <div class="contact-grid">
+        {location && <div><h3>{location.label}</h3><p>{address}</p></div>}
+        <div><h3>Contact Number</h3><a href={`tel:${phone}`}>{portfolio.phoneDisplay}</a></div>
+        <div><h3>Email Address</h3><a href={`mailto:${email}`}>{email}</a></div>
+        <div><h3>LinkedIn</h3><a href={portfolio.linkedin} target="_blank" rel="noopener noreferrer">www.linkedin.com/in/muhammad-sohaib <Icon name="external" size={16} /></a></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+<script>
+  const filters = document.querySelector<HTMLElement>('.project-filters');
+  const cards = document.querySelectorAll<HTMLElement>('.project-card');
+  if (filters) {
+    filters.hidden = false;
+    filters.addEventListener('click', (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('button[data-filter]');
+      if (!button) return;
+      const category = button.dataset.filter;
+      filters.querySelectorAll('button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      cards.forEach((card) => {
+        card.hidden = category !== 'All' && !JSON.parse(card.dataset.categories ?? '[]').includes(category);
+      });
+    });
+  }
+</script>
