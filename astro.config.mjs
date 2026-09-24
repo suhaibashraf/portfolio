@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://suhaibashraf.github.io',
+  base: '/portfolio',
   output: 'static',
   trailingSlash: 'never',
   build: { format: 'file' },

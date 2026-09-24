@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://suhaibashraf.github.io/sitemap.xml
+Sitemap: https://suhaibashraf.github.io/portfolio/sitemap.xml

@@ -4,6 +4,12 @@ from importlib.util import spec_from_file_location, module_from_spec
 from hashlib import sha256
 import json
 import re
+from urllib.parse import unquote, urlsplit
+from html.parser import HTMLParser
+
+BASE = "/portfolio/"
+def source_path(value):
+    return "/" + value[len(BASE):] if value and value.startswith(BASE) else value
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = spec_from_file_location('migration', ROOT / 'scripts/migrate-content.py')
@@ -50,17 +56,17 @@ for project in portfolio['projects']:
     built = Parser(page).root
     for value in [project['title'], *project['paragraphs'], *project['technologies']]:
         contains(value, built.text(), project['slug'])
-    sources = [item.attrs.get('src') for tag in ['img', 'iframe', 'source'] for item in built.all(tag)]
+    sources = [source_path(item.attrs.get('src')) for tag in ['img', 'iframe', 'source'] for item in built.all(tag)]
     expected_sources = ([project['cover']] if project['cover'] else []) + [photo['src'] for photo in project['photos']] + project['embeds'] + project['videos']
     for source in expected_sources:
         checks += 1
         if source not in sources:
             errors.append(f'{project["slug"]}: missing media {source}')
-    gallery_sources = [image.attrs.get('src') for gallery in built.all(cls='photo-grid') for image in gallery.all('img')]
+    gallery_sources = [source_path(image.attrs.get('src')) for gallery in built.all(cls='photo-grid') for image in gallery.all('img')]
     checks += 1
     if project['cover'] and project['cover'] in gallery_sources:
         errors.append(f'{project["slug"]}: cover image repeats in photo gallery')
-    links = [a.attrs.get('href') for a in built.all('a')]
+    links = [source_path(a.attrs.get('href')) for a in built.all('a')]
     for link in project['links']:
         checks += 1
         if link['href'] not in links:
@@ -87,6 +93,26 @@ for page in (ROOT / 'dist').glob('*.html'):
         checks += 1
         if removed in output:
             errors.append(f'{page.name}: removed link or media is still referenced: {removed}')
+# Every local page, script, stylesheet, PDF, and image must resolve under the deployment base.
+class LinkChecker(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        global checks
+        for name, value in attrs:
+            if name not in ('href', 'src', 'poster', 'data') or not value or not value.startswith('/') or value.startswith('//'):
+                continue
+            checks += 1
+            if not value.startswith(BASE):
+                errors.append(f'{self.page.name}: URL missing deployment base: {value}')
+                continue
+            path = unquote(urlsplit(value).path[len(BASE):])
+            target = ROOT / 'dist' / (path or 'index.html')
+            if not target.is_file():
+                errors.append(f'{self.page.name}: broken local URL: {value}')
+for html in (ROOT / 'dist').glob('*.html'):
+    checker = LinkChecker()
+    checker.page = html
+    checker.feed(html.read_text(encoding='utf-8'))
+
 if errors:
     raise SystemExit('\n'.join(errors))
 print(f'Content validation passed: {checks} checks against current portfolio data and assets.')

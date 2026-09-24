@@ -1,9 +1,10 @@
 ---
+import { withBase } from '../lib/urls';
 import { portfolio } from '../data/portfolio';
 ---
 <footer class="site-footer">
   <div class="container footer-inner">
-    <a class="footer-name" href="/">{portfolio.name}<span aria-hidden="true"> ↗</span></a>
+    <a class="footer-name" href={withBase('/')}>{portfolio.name}<span aria-hidden="true"> ↗</span></a>
     <p>Copyright © {new Date().getFullYear()} All rights reserved</p>
     <p class="template-credit">Original template by <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">Colorlib</a></p>
   </div>

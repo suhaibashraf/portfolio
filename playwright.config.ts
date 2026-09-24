@@ -7,17 +7,17 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: 'list',
   use: {
-    baseURL: 'http://127.0.0.1:4321',
+    baseURL: 'http://127.0.0.1:4333/portfolio/',
     browserName: 'chromium',
     ...(process.env.PLAYWRIGHT_CHANNEL ? { channel: process.env.PLAYWRIGHT_CHANNEL } : {}),
     trace: 'retain-on-failure',
   },
   webServer: {
-    command: 'npm run preview -- --host 127.0.0.1',
+    command: 'npm run preview -- --host 127.0.0.1 --port 4333',
     // Keep Astro in the foreground when tests run inside an agent environment.
     env: { ASTRO_PREVIEW_BACKGROUND: '1', ASTRO_TELEMETRY_DISABLED: '1' },
-    url: 'http://127.0.0.1:4321',
-    reuseExistingServer: !process.env.CI,
+    url: 'http://127.0.0.1:4333/portfolio/',
+    reuseExistingServer: false,
     stdout: 'pipe',
     stderr: 'pipe',
   },

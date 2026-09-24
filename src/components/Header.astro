@@ -1,5 +1,6 @@
 ---
-const home = Astro.url.pathname === '/';
+import { withBase } from '../lib/urls';
+const home = Astro.url.pathname.replace(/\/$/, '') === withBase('/').replace(/\/$/, '');
 const links = [
   ['Home', '/'], ['Resume', '/#resume-section'],
   ['Projects', '/#projects-section'], ['Contact', '/#contact-section'],
@@ -7,10 +8,10 @@ const links = [
 ---
 <header class="site-header">
   <div class="container header-inner">
-    <a class="wordmark" href="/" aria-label="Sohaib — home"><span class="monogram" aria-hidden="true">s</span><span>SOHAIB</span></a>
+    <a class="wordmark" href={withBase('/')} aria-label="Sohaib — home"><span class="monogram" aria-hidden="true">s</span><span>SOHAIB</span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" hidden>Menu <span aria-hidden="true">☰</span></button>
     <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
-      {links.map(([label, href]) => <a href={href} aria-current={home && label === 'Home' ? 'page' : undefined}>{label}</a>)}
+      {links.map(([label, href]) => <a href={withBase(href)} aria-current={home && label === 'Home' ? 'page' : undefined}>{label}</a>)}
     </nav>
   </div>
 </header>

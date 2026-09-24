@@ -21,12 +21,13 @@ if (!Number.isInteger(port) || port < 1024 || port > 65535) {
   console.error('Choose a port between 1024 and 65535.');
   process.exit(1);
 }
-const url = `http://127.0.0.1:${port}`;
+const origin = `http://127.0.0.1:${port}`;
+const url = `${origin}/portfolio/`;
 const normalizeRoot = (path) => process.platform === 'win32' ? resolve(path).toLowerCase() : resolve(path);
 
 async function status() {
   try {
-    const response = await fetch(`${url}/__portfolio-dev-status`, { signal: AbortSignal.timeout(1500) });
+    const response = await fetch(`${origin}/__portfolio-dev-status`, { signal: AbortSignal.timeout(1500) });
     if (!response.ok) return false;
     const data = await response.json();
     return data.app === 'sohaib-portfolio-dev' && typeof data.root === 'string' && normalizeRoot(data.root) === normalizeRoot(root);

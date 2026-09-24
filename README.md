@@ -19,14 +19,14 @@ For this Windows workspace, run this from the project terminal:
 .\scripts\dev.cmd
 ```
 
-Open **http://127.0.0.1:4322** and keep the terminal running. Saved edits to
+Open **http://127.0.0.1:4322/portfolio/** and keep the terminal running. Saved edits to
 `src/data/portfolio.json` update automatically. This launcher uses installed Node.js
 or the portable runtime in `.tools/`, and works when PowerShell blocks `.ps1` scripts.
 No execution-policy change is required. Stop the development server with Ctrl+C.
 
 The production preview on port **4321** serves the last build in `dist/`; it does
 not pick up source edits until `npm run build` is run again. Use port **4322** for
-editing. Running `npm run dev` directly uses Astro's default port, normally 4321.
+editing. Running `npm run dev` directly uses Astro's default port, normally 4321, at `/portfolio/`.
 
 ```sh
 npm run check     # Astro and TypeScript diagnostics
@@ -50,9 +50,9 @@ legacy/             Original source snapshot, excluded from the build
 ```
 
 Edit `src/data/portfolio.json` to update portfolio information.
-The home page's **Resume** button opens `/resume.html`, which embeds the PDF selected
+The home page's **Resume** button opens `/portfolio/resume.html`, which embeds the PDF selected
 by the `cv` field in that file. Replace `public/CVASHRAF.pdf` to update the existing
-CV. The viewer also offers direct open and download links for browsers that do not
+resume. The viewer offers a download button and a fallback link for browsers that do not
 support embedded PDFs.
 
 Shared components
@@ -90,7 +90,12 @@ To use an installed Chrome browser on Windows, set `PLAYWRIGHT_CHANNEL=chrome`.
 The workflow in `.github/workflows/pages.yml` checks and builds pull requests.
 Pushes to `main` build, test, and deploy **only `dist/`** using GitHub Pages Actions.
 In the repository's **Settings → Pages**, select **GitHub Actions** as the source.
-The configured site URL is `https://suhaibashraf.github.io`.
+The published site URL is `https://suhaibashraf.github.io/portfolio/`.
+The repository is `suhaibashraf/portfolio`. Private repositories require a GitHub plan
+that supports Pages; otherwise the repository must be public before enabling Pages.
+Keep source data paths such as `/images/photo.jpg` unchanged: the shared URL helper
+adds `/portfolio` when pages are rendered. Browser tests use an isolated preview
+on port 4333 and shut it down after testing.
 
 The rebuild has not been published simply by editing this workspace. A push to
 `main` or a manual workflow run triggers deployment after the checks pass.

@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/urls';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import ProjectCard from '../components/ProjectCard.astro';
@@ -16,7 +17,7 @@ const address = location?.value ?? '';
       <h1 id="hero-title">{portfolio.shortName}</h1>
       <div class="hero-roles">{portfolio.roles.map((role) => <p>{role}</p>)}</div>
       <div class="hero-actions">
-        <a class="button button-dark" href="/resume.html" target="_blank" rel="noopener noreferrer" aria-label="Resume (opens in a new tab)">Resume</a>
+        <a class="button button-dark" href={withBase('/resume.html')} target="_blank" rel="noopener noreferrer" aria-label="Resume (opens in a new tab)">Resume</a>
       </div>
     </div>
     <figure class="hero-visual">
